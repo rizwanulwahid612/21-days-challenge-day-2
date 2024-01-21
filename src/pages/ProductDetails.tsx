@@ -5,7 +5,7 @@
 import { useParams } from 'react-router-dom';
 import { useSingleProductQuery } from '../redux/features/products/productApi';
 import { Button } from '../components/ui/button';
-//import { CloudFog } from 'lucide-react';
+import ProductReview from '../components/ProductReview';
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -13,7 +13,6 @@ export default function ProductDetails() {
  const {data:product,isLoading,error} = useSingleProductQuery(id);
 console.log(isLoading);
 console.log(error);
-console.log(product)
   //! Temporary code ends here
 
   return (
@@ -33,7 +32,7 @@ console.log(product)
           <Button>Add to cart</Button>
         </div>
       </div>
-      {/* <ProductReview id={id!}/> */}
+      <ProductReview id={id!}/>
     </>
   );
 }

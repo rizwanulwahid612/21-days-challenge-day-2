@@ -7,6 +7,7 @@ import Checkout from '../pages/Checkout';
 import NotFound from '../pages/NotFound';
 import Signup from '../pages/Signup';
 import Login from '../pages/Login';
+import PrivateRoute from './PrivateRoute';
 // import App from '@/App';
 // import Login from '@/pages/Login';
 // import NotFound from '@/pages/NotFound';
@@ -36,8 +37,9 @@ const routes = createBrowserRouter([
       },
       {
         path: '/checkout',
-        element:
-          <Checkout /> ,
+        element: (<PrivateRoute>
+          <Checkout />
+        </PrivateRoute>) ,
       },
     ],
   },
